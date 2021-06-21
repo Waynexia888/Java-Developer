@@ -24,4 +24,5 @@ public class ThreadDemo {
     }
 }
 ```
-- https://docs.oracle.com/javase/9/docs/api/overview-summary.html#
+- Java9 Docs: https://docs.oracle.com/javase/9/docs/api/overview-summary.html#
+- Javatpoint Docs: https://www.javatpoint.com/creating-thread
