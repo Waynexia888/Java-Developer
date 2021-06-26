@@ -58,7 +58,37 @@
       - unary relationsjip
       - binary relationship
       - n-ary relationship
-    - Cardinality(基数): the number of times of an entity participates in a relationship set
-      - One to One
-      - Many to One
-      - Many to Many
+  - Cardinality(基数): the number of times of an entity participates in a relationship set
+    - One to One
+    - Many to One
+    - Many to Many
+  - participation constraint
+    - total participation: each entity **must** participate in the relationship; use 2 lines to present
+    - partial participation: the entity **may or may not** participate in the relationship; use 1 line to present
+  - constraints(约束) in relational model
+    - domain constraints: each field of table should be atmoic value(not composite, not multivalued)
+    - key constraints: primary key unique define each row
+    - referential(有所指的) integrity(完整，诚实， 正直) constraints
+- map from ER diagram to relational model
+  - case1: binary relationship with 1 to 1 cardinality with total participation of entity
+    - step1: entity/relationship -> table
+    - step2: optimize
+  - case2: binary relationship with 1 to 1 cardinality with partial participation of both entity
+  - case3: binary relationship with many to 1 cardinality
+  - case4: binary relationship with many to many cardinality
+
+### Database Normalization
+- eliminate redunant data and ensure data is stored logically
+- 6 in total, but achieves its best in 3rd normal form
+- 1 Normal Form
+  - each table cell contains a single value
+  - each record need to be unique
+- 2nd Normal Form
+  - be in 1st normal form
+  - single column primary key
+- 3rd Normal Form
+  - be in 2nd normal form
+  - has no transitive dependency( when changing a non-key column, might cause any of the other non-key columns to change)
+- normalization -> split table into several tables -> need more join -> reduce performance
+  - it means sometimes the higher normalization, it may bring in low performance
+- de-normalization 
