@@ -14,6 +14,7 @@
   - Class.forName用于加载指定的JDBC驱动类
   - Class.forName本质是通知JDBC注册这个驱动类
   - 驱动由数据库厂商自行开发，连接字符串也不同
+  - <img src="https://github.com/Waynexia888/Java-Developer/blob/main/Images/%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E4%BB%A3%E7%A0%81.png" width="600" height="400">
 - 创建数据库连接
 - 创建Statement对象
 - 遍历查询结果
