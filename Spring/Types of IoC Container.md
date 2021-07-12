@@ -1,5 +1,9 @@
 - https://stackoverflow.com/questions/3918083/what-exactly-is-a-context-in-java
 
+### two types of IoC container
+- BeamFactory
+- ApplicationContext
+
 ### interview question: What is difference between ApplicationContext and BeanFactory?
 - BeanFactory and ApplicationContext both are ways to get beans from your spring IOC container.
 - The BeanFactory is the most basic version of IOC containers, and the ApplicationContext extends the features of BeanFactory.
