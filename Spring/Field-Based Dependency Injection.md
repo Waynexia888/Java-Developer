@@ -8,7 +8,10 @@ public class Store {
 ```
 - While constructing the Store object, if there's no constructor or setter method to inject the Item bean, the container will use reflection to inject Item into   Store.
 - We can also achieve this using ***XML configuration*** (not recommend)
- 
+  - This approach might look simpler and cleaner, but we don't recommend using it because it has a few drawbacks such as:
+  - This method ***uses reflection to inject the dependencies***, which is **costlier than constructor-based or setter-based injection**.
+  - It's really easy to keep adding multiple dependencies using this approach. If we were using constructor injection, having multiple arguments would make us think that the class does more than one thing, which can violate the Single Responsibility Principle.
+- @Autowired: Wiring allows the Spring container to automatically resolve dependencies between collaborating beans by inspecting the beans that have been defined.
 - 参考: https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
 
 ### Spring Annotations
