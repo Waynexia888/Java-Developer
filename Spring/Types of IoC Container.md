@@ -34,3 +34,6 @@
 - setter
 - https://www.geeksforgeeks.org/spring-dependency-injection-with-example/
 - 
+
+### Beam Scope and Life Cycle
+- 
