@@ -24,3 +24,9 @@
 - global session
 - https://www.tutorialspoint.com/spring/spring_bean_scopes.htm
 
+### interview question: Types of Dependency Injection
+- field
+- constructor
+- setter
+- https://www.geeksforgeeks.org/spring-dependency-injection-with-example/
+- 
