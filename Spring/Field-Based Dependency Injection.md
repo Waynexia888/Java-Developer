@@ -41,7 +41,7 @@ public class Store {
 ```
 
 ### Annotation-based Container Configuration
-- 1.9 https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-annotation-config
+- 官方Spring文档，1.9 https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-annotation-config
 ```java
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
