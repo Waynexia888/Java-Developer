@@ -11,7 +11,7 @@ public class Store {
   - This approach might look simpler and cleaner, but we don't recommend using it because it has a few drawbacks such as:
   - This method ***uses reflection to inject the dependencies***, which is **costlier than constructor-based or setter-based injection**.
   - It's really easy to keep adding multiple dependencies using this approach. If we were using constructor injection, having multiple arguments would make us think that the class does more than one thing, which can violate the Single Responsibility Principle.
-- @Autowired: Wiring allows the Spring container to automatically resolve dependencies between collaborating beans by inspecting the beans that have been defined.
+- Autowiring Dependencies: Wiring allows the Spring container to automatically resolve dependencies between collaborating beans by inspecting the beans that have been defined.
 - 参考: https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
 
 ### Spring Annotations
@@ -75,3 +75,11 @@ public class Store {
   - @Named: 与@Inject配合使用，JSR-330规范，按属性名自动装配属性
   - @Resource: The @Resource annotation is part of the JSR-250 annotation collection, 优先按名称，再按类型智能匹配
 - 参考： https://www.baeldung.com/spring-annotations-resource-inject-autowire
+
+### 元数据注解
+- @Primary
+- @PostConstruct
+- @PreDestroy
+- @Scope
+- @Value
+- 参考视频：慕课网-Spring IoC容器与Beam管理-第5章-5.8
