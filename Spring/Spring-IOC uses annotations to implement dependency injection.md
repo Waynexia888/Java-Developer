@@ -1,7 +1,3 @@
-### two types of IoC container
-- BeamFactory
-- ApplicationContext
-
 ### Spring Annotations
 - The ***@ComponentScan*** annotation is used with the ***@Configuration*** annotation to tell Spring the packages to scan for annotated components. 
 - @ComponentScan also used to specify base packages and base package classes using thebasePackageClasses or basePackages attributes of @ComponentScan.
