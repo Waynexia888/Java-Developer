@@ -27,7 +27,8 @@ public class Store {
 - https://www.baeldung.com/spring-component-repository-service
 
 ### Mind Mapping
-- <img src="https://github.com/Waynexia888/Java-Developer/blob/main/Images/%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E4%BB%A3%E7%A0%81.png" width="600" height="400">
+- <img src="https://github.com/Waynexia888/Java-Developer/blob/main/Images/mind-mapping.png" width="1000" height="400">
+
 ### Component Scan （Open annotation (also called scan package)）
 ```java
 <!--XML配置开启组件扫描，才能使用注解-->
