@@ -25,3 +25,21 @@
   <context:exclude-filter type="regex" expression="com.imooc.exl.*"/>
 </context:component-scan>
 ```
+
+### Annotation-based Container Configuration
+- https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-annotation-config
+
+### IntelliJ IDEA
+- sout -> (System.out.println())
+- command + N -> getter and setter
+- psvm (public static void main(String[] args) {})
+- command + o -> search file/class/symbols/actions
+
+### @Autowired, @Inject, @Resource
+- Match by type
+  - @Autowired: 按容器内对象类型动态注入属性，由Spring机构提供
+  - @Inject: The @Inject annotation belongs to the JSR-330 annotations collection. 其他同@Autowired，但不支持required属性
+- Match by name
+  - @Named: 与@Inject配合使用，JSR-330规范，按属性名自动装配属性
+  - @Resource: The @Resource annotation is part of the JSR-250 annotation collection, 优先按名称，再按类型智能匹配
+- https://www.baeldung.com/spring-annotations-resource-inject-autowire
