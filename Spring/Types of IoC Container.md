@@ -20,13 +20,15 @@
 - default scope of a spring beam is singleton, means that spring, by default, only create one object inside the application context. everytime we use autowire annotation, we always go to the same object, always inject the same object.
 - throughout the application context(the application context is container), we have only one object created by spring inside the application context.
 
-### five basic scope for a spring beam?
+### Interview Question: five basic scope for a spring beam?
 - singleton
 - prototype
 - request
 - session
 - global session
 - https://www.tutorialspoint.com/spring/spring_bean_scopes.htm
+
+### Interview Question: What is the different between singleton and prototype?
 
 ### interview question: Types of Dependency Injection
 - field
