@@ -1,8 +1,8 @@
 ## Life Cycle of a Thread
 
 - reference: https://www.geeksforgeeks.org/lifecycle-and-states-of-a-thread-in-java/
-- Thread class state: cannot start a thread by calling run method; cannot run start() two times
-- The life cycle of the thread in java is controlled by JVM. There has 6 states as follows:
+- Thread class state: ***cannot start a thread by calling run method; cannot run start() two times***
+- The life cycle of the thread in java is controlled by JVM. There has ***6 states*** as follows:
   - new
     - When a new thread is created, it is in the new state. The thread has not yet started to run when thread is in this state. When a thread lies in the new state, it’s code is yet to be run and hasn’t started to execute.
   - runnable
