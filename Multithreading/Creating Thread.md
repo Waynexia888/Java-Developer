@@ -1,26 +1,46 @@
 ## Four Ways to Creat Thread
 ### extend Thread class
   - public void run(): is used to perform action for a thread.
-  - public void start(): starts the execution of the thread.JVM calls the run() method on the thread.
+  - public void start(): starts the execution of the thread. JVM calls the run() method on the thread.
   - example:
 ```java
-class MyThread extends Thread { // 线程的主体类
-    private String title;
-    public MyThread(String title) {
-        this.title = title;
-    }
+class MyThread extends Thread { // extend Thread class
     @Override
-    public void run() {  // 线程的主体方法
-        for (int x = 0; x < 10; x++) {
-            System.out.println(this.title + "运行, x = " + x);
-        }
+    public void run() { 
+        System.out.println(Thread.currentThread().getName() + " - print in a new thread");
     }
 }
+
+class MyThread2 implements Runnable { // implement runnable interface
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " - print in a new thread");
+    }
+}
+
+class MyCallableClass implements Callable<String> {  // implement callable interface:
+    @Override
+    public String call() throws Exception {
+        return "Today is " + LocaldateTime.now();
+    }
+}
+
 public class ThreadDemo {
     public static void main(String[] args) {
-        new MyThread("线程A").start();
-        new MyThread("线程B").start();
-        new MyThread("线程C").start();
+        System.out.println(Thread.currentThread().getName() + " - print in main thread");
+        MyThread t = new MyThread();
+        t.start();
+        
+        Thread t2 = new Thread(new MyThread2());
+        t2.start();
+        
+        // using Thread pool
+        ExecutorService es = Executors.newFixedThreadPool(10);
+        es.submit(new MyThread2());  // runnable
+        es.shutdown(); 
+        
+        Future<String> future = es.submit(new MyCallableClass()); // callable
+        System.out.println(future.get()); // it will give us the result
     }
 }
 ```
@@ -30,12 +50,16 @@ public class ThreadDemo {
 - I prefer runnable because java only supports single inheritance, so you can only extend one class, but you can implement multiple interface. it gives us more flexibility.
 
 ### implement callable interface:
-- 
+
 
 ### callable vs runnable
 - callable can have a return value
 - callable can throw an exception
 - callable is override(重写) call() method, while runnable is override run() method.
+
+### Interview Question: run() v.s start() method
+- when the program calls start() method, a new thread is created, and code inside run() method is executed in new Thread
+- while if you call run() method, no new thread is created, and code inside run() will execute on current Thread.
 
 ### why create thread pool, instead of creating 10 new thread object?
 - create a thread means you have to aside certain JVM resource to do that. in that case, you frequently create and then recycle, create then recycle, that will lower the perfermance of the JVM. 
@@ -43,8 +67,7 @@ public class ThreadDemo {
 - serveal way to create thread pool, for example, 
 
 ### implement ThreadPool
-- Thread pool represents a group of worker threads that are waiting for the job and reuse many times.
-- In case of thread pool, a group of fixed size threads are created. A thread from the thread pool is pulled out and assigned a job by the service provider. After completion of the job, thread is contained in the thread pool again.
+- Threads are objects. It takes memory and consumes(消耗) computational power(计算能力) in cpu. To reduce the cost of creating and destorying new threads, and also to confine(限制) the memory usage(内存使用). On the server side application, we use thread pool to pre-populate(预先填充) certain number of threads to be reused by different tasks.
 - Advantage: Better performance It saves time because there is no need to create new thread.
 - Real time usage: It is used in Servlet and JSP where container creates a thread pool to process the request.
 - 4 basic thread pool we can create in java
