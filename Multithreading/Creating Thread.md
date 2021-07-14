@@ -1,5 +1,5 @@
 ## Four Ways to Creat Thread
-- extend Thread class
+- ***extend Thread class***
   - public void run(): is used to perform action for a thread.
   - public void start(): starts the execution of the thread.JVM calls the run() method on the thread.
   - example:
@@ -24,25 +24,22 @@ public class ThreadDemo {
     }
 }
 ```
-- implement runnable interface
+- ***implement runnable interface***
 
-- which way do you prefer? 
+- ***Interview Question:*** which way do you prefer? 
   - I prefer runnable because java only supports single inheritance, so you can only extend one class, but you can implement multiple interface. it gives us more flexibility.
 
-- Thread class methods:
-  - start()
-  - run()
-  - currentThread()
-  - getName()
-  - setName()
-  - yield()
-  - join()
+- ***Thread class methods:***
+  - start() -> starts the execution of the thread.JVM calls the run() method on the thread.
+  - run() -> is used to perform action for a thread.
+  - currentThread() -> returns the reference of currently executing thread.
+  - getName() -> returns the name of the thread.
+  - setName(String name): changes the name of the thread.
+  - yield() -> causes the currently executing thread object to temporarily pause and allow other threads to execute.
+  - join() -> waits for a thread to die
   - stop(): deprecated
-  - sleep(long mili time)
-  - isAlive()
-
-
-
+  - sleep(long mili time) -> Causes the currently executing thread to sleep (temporarily cease execution) for the specified number of milliseconds.
+  - isAlive() -> tests if the thread is alive.
 
 - Java9 Docs: https://docs.oracle.com/javase/9/docs/api/overview-summary.html#
 - Javatpoint Docs: https://www.javatpoint.com/creating-thread
