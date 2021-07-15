@@ -99,7 +99,7 @@ public void doSomething(int i) {  // the i here is a local variable. we passed t
     i = 200;                      // but it won't affect the value of i in method1() because it is a local variable. 
 }
 ```
-``java
+```java
 public void method1(){
     Apple a1 = new Apple("RED");
     doSomething(a1);
