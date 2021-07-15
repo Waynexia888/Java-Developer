@@ -51,13 +51,21 @@ class Apple {
 }
 ```
 ```java
-Integer i1 = 100;
+Integer i1 = 100; // constant pool
 Integer i2 = 100;
 System.out.println(i1 == i2); // true, because in IntegerCache, the high value is 127, the low value is -128. Integer valueOf(int i) {} 
 
 Integer i3 = 1000;
 Integer i4 = 1000;
 System.out.println(i3 == i4); // false, since the value exceed the high value in IntergerCache
+
+String s1 = "100"; // stored "100" in constant pool
+String s2 = "100"; 
+System.out.println(s1.equals(s2));  // true, they are pointed to the same "100" in constant pool
+
+String s3 = new String("100"); // new object
+String s4 = new String("100"); // new object
+System.out.println(s3.equals(s4)); // false, they are pointed to the different memory reference of the object.
 ```
 
 ### final keyword
@@ -65,7 +73,7 @@ System.out.println(i3 == i4); // false, since the value exceed the high value in
 - final variable means we cannot change the value of the variable. (it will be constant)
 - final method means we cannot override it (the method)
 - final class means we cannot extend it (the class)
-- 
+
 ### Is string immutable or not?
 - string is immutable
 
@@ -76,3 +84,43 @@ System.out.println(i3 == i4); // false, since the value exceed the high value in
 - Don't provide setter methods for variables.
 - deep copy
 - 参考： https://www.geeksforgeeks.org/create-immutable-class-java/
+
+### pass by value v.s pass by reference
+- pass by value means the actual value is passed on. 
+- Pass by reference means a reference (called an address) is passed on which defines where the value is stored.
+```java
+public void method1(){
+    int i = 100;
+    doSomething(i);
+    System.out.println(i); // 100
+}
+
+public void doSomething(int i) {  // the i here is a local variable. we passed the value of i to doSomething()method, the value is changed to 200.
+    i = 200;                      // but it won't affect the value of i in method1() because it is a local variable. 
+}
+```
+``java
+public void method1(){
+    Apple a1 = new Apple("RED");
+    doSomething(a1);
+    System.out.println(a1.color); // GREEN 
+}
+
+public void doSomething(Apple a){ // we passed a copy of reference to doSomething() method. a and a1 pointing to the same object, but 
+                                  // they are difference references
+
+    a.color="GREEN";              // Object's content is changed. So both a and a1 changed.
+}
+```
+```java
+public void method1(){
+    Apple a1 = new Apple("RED");
+    doSomething(a1);
+    System.out.println(a1.color); // RED  
+}
+
+public void doSomething(Apple a){ 
+  a = new Apple("RED");           // here we create a new Apple. and a is its reference now.
+  a.color="GREEN";                // so changing the new Object value won't do anything to a1.
+}
+```
