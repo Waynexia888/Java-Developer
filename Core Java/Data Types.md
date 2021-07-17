@@ -124,3 +124,31 @@ public void doSomething(Apple a){
   a.color="GREEN";                // so changing the new Object value won't do anything to a1.
 }
 ```
+
+### Immutable Class vs Final Class
+- what is Immutable class?
+    - Immutable class means once the object of the class is created, its fields cannot be modified or changed.
+- Advantages
+    - Immutable objects are thread safe, so you will not have any synchronization issues.
+    - you won't worry about their data because nobody can change or modified it.
+- how to create Immutabel class? (by creating final class that have final data members)
+    - the class is final, so we cannot create the subclass (to extend it)
+    - the instance variable of the class is final. (we cannot change the value of it after creating an object.)
+    - There is no setter methods. (i.e. we have no option to change the value of the instance variable.)
+```java
+public final class Employee {
+    private final String Id;
+    
+    public Empolyee(String Id) {
+        this.Id = Id;
+    }
+    
+    public String getId() {
+        return Id;
+    }
+}
+```
+- https://www.javatpoint.com/how-to-create-immutable-class
+- value object: means this object contains only value, you can only read it, you cannot change it.
+- what if we have a collections or reference inside this class?
+    - the best practice is always return a copy of this address instead of return the address itself.
