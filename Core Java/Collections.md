@@ -38,7 +38,7 @@ public void doSomething(){
 ### Collections - Map
 - An object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value.
 - HashMap
-  - In order to make it fast to locate the key-value pair in O(1) time complexity. ***Hahsmap internally uses an array of linkedlist.***
+  - In order to make it fast to locate the key-value pair in O(1) time complexity of data retrieval and saving. ***Hahsmap internally uses an array of linkedlist.***
   - Each element in this array is a bucket. Hashmap uses the ***hashcode()*** method to calculate the index of the target bucket. 
   - After finding the bucket, it uses the ***equals()*** method to check if there is duplicate key. 
   - if the operation is get(), then it will return the key-value pair, 
