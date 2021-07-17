@@ -62,5 +62,9 @@ for (Character c : str.toCharArray()) {
 - TreeMap
   - TreeMap is a class, and it implements SortedMap interface, the sortedMap interface extends map interface.
   - The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.
-- ![map](https://github.com/Waynexia888/Java-Developer/blob/main/Images/map.png)
-
+- <img src="https://github.com/Waynexia888/Java-Developer/blob/main/Images/map.png" width="400" height="500">
+- HashMap v.s LinkedHashMap v.s TreeMap
+| HashMap | LinkedHashMap | TreeMap |
+| ------- | ------------- | ------- |
+| hashmap is a class, it implements the map interface; <br> it doesn't maintain any order | LinkedHashMap is a class, and it extends the hashmap class; <br> it maintains insertion order | TreeMap is a class, and it implements SortedMap interface, the sortedMap interface extends map interface; <br> it maintains ascending order |
+- https://www.javatpoint.com/java-map
