@@ -62,3 +62,5 @@ for (Character c : str.toCharArray()) {
 - TreeMap
   - TreeMap is a class, and it implements SortedMap interface, the sortedMap interface extends map interface.
   - The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.
+- ![map](https://github.com/Waynexia888/Java-Developer/blob/main/Images/map.png)
+
