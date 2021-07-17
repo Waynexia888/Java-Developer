@@ -36,8 +36,9 @@ public void doSomething(){
 // if override equals using color field. aSet.size() will be 1. Try it.
 ```
 ### Collections - Map
-- An object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value.
+- map is an interface, it contains key value pairs. A map cannot contain duplicate keys; each key can map to at most one value.
 - HashMap
+  - hashmap is a class, it implements the map interface
   - In order to make it fast to locate the key-value pair in O(1) time complexity of data retrieval and saving. ***Hahsmap internally uses an array of linkedlist.***
   - Each element in this array is a bucket. Hashmap uses the ***hashcode()*** method to calculate the index of the target bucket. 
   - After finding the bucket, it uses the ***equals()*** method to check if there is duplicate key. 
@@ -56,6 +57,8 @@ for (Character c : str.toCharArray()) {
 }
 ```
 - LinkedHashMap
+  - LinkedHashMap is a class, and it extends the hashmap class.
   - Maintain the insertion order of the key-value pairs. This implementation differs from HashMap in that it maintains a doubly-linked list running through all of its entries. This linked list defines the iteration ordering, which is normally the order in which keys were inserted into the map (insertion-order). Note that insertion order is not affected if a key is re-inserted into the map.
 - TreeMap
+  - TreeMap is a class, and it implements SortedMap interface, the sortedMap interface extends map interface.
   - The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.
