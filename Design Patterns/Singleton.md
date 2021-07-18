@@ -31,4 +31,40 @@ public class SingletonA {
 // object is create eagerly. No thread safety issue in this one.
 ```
 
-### 
+### double-lock checking style
+- Also we can create a double-lock checking style, which lazily instantiats the object.
+```java
+public class SingletonB {
+	private static volatile SingletonD instance= null; // volatile - prevent instruction reordering
+
+	private SingletonB(){} // private constructor
+	public static SingletonB getInstance(){
+// check once. none blocking return.
+		if(instance == null){
+                        // if null, race for the lock
+			synchronized(SingletonB.class){ 
+				if(instance == null){ // check twice in case the previous thread who got the lock already created the instance.
+					instance = new SingletonB();
+				}
+			}
+		}
+		return instance;
+	}
+}
+```
+```java
+public class SingletonTest {
+	public static void main(String[] args) {
+		Runnable r = ()->{
+			System.out.println(SingletonD.getInstance());
+		}; // lambda
+		ExecutorService es = Executors.newFixedThreadPool(40); // thread pool
+		for(int i = 0 ; i < 50; i++){
+			es.submit(r);
+		}
+		es.shutdown();
+	}
+}
+// if the class is thread safe, all the objects should be the same name.
+// if you see two or more result got printed out. that means multiple object got create which is against the defination of singleton.
+```
