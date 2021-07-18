@@ -89,4 +89,4 @@ public class Department {
 
 ### Difference between factory and builder
 - facotry is used to hide the creation process of the object from being exposed to the client. Client doesn't know how the object get created. just ask for it and use it
-- builder is us
+- builder is used to simplicity the creation process of a complex object if there are too many attribute to set. Client know what exactly to set.
