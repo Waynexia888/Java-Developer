@@ -1,6 +1,6 @@
 ### Design Patterns - Factory
 - Factory is a creational design pattern, so it relate to the object creation.
-- factory pattern hides the creation process of the objects from being exposed to the caller. Caller of Factory doesn't know how the object get created.
+- factory pattern hides the creation process of the objects from being exposed to the client. Client doesn't know how the object get created. just ask for it and use it
 - This will make the code loosely coupled.
 - Using Factory Pattern, we can achieve lots of techniques like Dependency Inject, Inversion Of Control. that's how Spring IOC does it.
 - Example:
