@@ -48,3 +48,7 @@ public class FruitFactory2 {
 FruitFactory2 f2 = new FruitFactory2();
 f2.createFruit("apple");
 ```
+- steps
+- 1) create main class which call factory class.
+- 2) Factory class returns required class instance 
+
