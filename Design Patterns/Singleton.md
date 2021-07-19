@@ -68,3 +68,9 @@ public class SingletonTest {
 // if the class is thread safe, all the objects should be the same name.
 // if you see two or more result got printed out. that means multiple object got create which is against the defination of singleton.
 ```
+### What is lazy and early loading of Singleton and how will you implement it?
+- This is another great Singleton interview question in terms of understanding of concept of loading and cost associated with class loading in Java. 
+Many of which I have interviewed not really familiar with this but its good to know concept.
+
+- Answer : As there are many ways to implement Singleton like using double checked locking or Singleton class with static final instance initialized during class loading. Former is called lazy loading because Singleton instance is created only when client calls getInstance() method while later is called early loading because Singleton instance is created when class is loaded into memory.
+- https://javarevisited.blogspot.com/2011/03/10-interview-questions-on-singleton.html#axzz7126XsXUd
