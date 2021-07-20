@@ -119,3 +119,32 @@ public class Java8MethodReference {
 }
 
 ```
+
+### Stream Api
+- What is a stream?
+  - Stream is a sequence of data elements that support sequential and parallel aggregate operations
+- How is it different than collection?
+  - collection focus on the storage of data elements for efficient access
+  - while stream is focus on aggreagte computations on data elements.
+- How does stream work?
+  - to perform a computation, stream operations are composed into a stream pipeline. A stream pipeline consists of a source, intermediate operations, and a terminal operations.
+- Inportant key points about the stream
+  - streams support lazy opperations, computation on the source data is only performed when the terminal operation is initiated,
+  - streams have no storage
+  - streams cannot be reused
+  - streams can be ordered or unordered.
+  - stream are designed to support functional programming.
+  - streams are designed to be processed in parallel with no additional work from the developers
+- To create a stream, just call stream() method on any Collection. 
+```java
+List<String> aList = getAListFromSomePlaces();
+
+aList.stream(); // generate a stream
+
+aList.stream().filter(s->s.startWith("A")); // pipeline the stream, filter out, keep the strings starting with A
+
+aList.stream().filter(s->s.startWith("A")).forEach(System.out::println); // a complete pipeline includes intermediate operation and only 1 termination operation.
+ 
+```
+- what is the parallelStream?
+  - parallel processing of the data.
