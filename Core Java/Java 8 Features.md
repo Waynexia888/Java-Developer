@@ -127,7 +127,7 @@ public class Java8MethodReference {
   - collection focus on the storage of data elements for efficient access
   - while stream is focus on aggreagte computations on data elements.
 - How does stream work?
-  - to perform a computation, stream operations are composed into a stream pipeline. A stream pipeline consists of a source, intermediate operations, and a terminal operations.
+  - to perform a computation, stream operations are composed into a stream pipeline. A stream pipeline consists of a source, intermediate operations, and a terminal operation.
 - Inportant key points about the stream
   - streams support lazy opperations, computation on the source data is only performed when the terminal operation is initiated,
   - streams have no storage
