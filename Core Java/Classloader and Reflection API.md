@@ -54,7 +54,8 @@ public class ChangeDataType {
 ```
 
 ### Reflection API
-- Reflection is an Api, using reflection api, we don't need to know the class untill at the runtime.
+- Reflection is an Api, is used to modify the behavior of methods, classes, interfaces at the run time.
+- using reflection api, we don't need to know the class untill at the runtime.
 - Through reflection, all the methods and field can be called. Even for those who are private.
 - Combine with annotations, using reflection api can achieve lots of framework jobs. 
 - Below is a small "framework" to print out company value in the annotation Antra.
