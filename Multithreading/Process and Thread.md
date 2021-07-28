@@ -2,8 +2,11 @@
 
 - a **program** is the static codes that we write down.
 - a **process** is an execution of a program. The Java Virtual Machine allows an application to have multiple threads of execution running concurrently
-- a **thread** is an execution runtime of a process.
+- a **thread** is a light-weight process. It's a unit of execution within a given process(a process may have several threads). Each thread in a process shares the memory and resources.
 - Thread class represent a virtual thread.
 - One thread object can only be started once.
-- 线程是在进程基础之上划分的更小的程序单元，线程是在进程基础上创建并且使用的，所以线程依赖于进程的支持，但是线程的启动速度要比进程快很多，所以当使用多线程进行并发处理的时候，其执行的性能要高于进程。
-- Java是多线程的编程语言，所以Java在进行并发访问处理的时候可以得到更高的处理性能。
+
+### Multithreading advantages:
+- we can design more responsive applications: we can do several operations concurrently.
+- we can achieve better resource utilization.
+- we can improve performance of the program.
